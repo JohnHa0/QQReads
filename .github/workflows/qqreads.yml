@@ -40,7 +40,6 @@ jobs:
           npm install
       - name: '运行 【qqreads任务】'
         run: |
-          cd ~/Task
           node qqreads.js
         env:
           
