@@ -20,8 +20,8 @@ jobs:
         QQREAD_TIMEHD: ${{ secrets.QQREAD_TIMEHD }}
         QQREAD_CASH: ${{ secrets.QQREAD_CASH }}
     steps:
-       - name: Checkout
-         run: |
+      - name: Checkout
+        run: |
           git clone https://github.com/JohnHa0/QQReads.git ~/JavaScript
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -32,12 +32,12 @@ jobs:
         run: |
           cd ~/JavaScript
           npm install
-      - name: '运行 【qqreads任务】'
+      - name: '运行 【企鹅阅读】'
         if: env.QQREAD_BODY
         run: |
           cd ~/JavaScript
-          node Task/qqreads.js
-        env:          
+          node Task/qqreadnode.js
+        env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
