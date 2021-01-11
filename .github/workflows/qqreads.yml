@@ -21,7 +21,7 @@ jobs:
         QQREAD_CASH: ${{ secrets.QQREAD_CASH }}
     steps:
        - name: Checkout
-        run: |
+         run: |
           git clone https://github.com/JohnHa0/QQReads.git ~/JavaScript
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -37,9 +37,7 @@ jobs:
         run: |
           cd ~/JavaScript
           node Task/qqreads.js
-        env:
-       
-          
+        env:          
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
